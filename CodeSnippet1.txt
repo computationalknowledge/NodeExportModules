@@ -1,0 +1,48 @@
+program1.js
+
+//Using both the FOR LOOP and WHILE LOOP formulations, 
+//write JavaScript code to add the numbers from 1000 down to 100, 
+//counting down by 48 each iteration, and adding up 
+// all the numbers you step over. Wrap 
+//your code up in FUNCTIONS and call the functions to do the work. 
+// Display/output the final SUM:
+var BrownBear1 = {
+    forLoopAdder: function a(startnumber, endnumber, stepnumber) {
+        currentNumber = startnumber;
+        sum = 0;
+        for (; currentNumber >= endnumber;) {
+            sum += currentNumber;
+            currentNumber -= stepnumber;
+        }
+        return sum;
+    },
+
+    whileLoopAdder: function a(startnumber, endnumber, stepnumber) {
+        currentNumber = startnumber;
+        sum2 = 0;
+        while (currentNumber >= endnumber) {
+            sum2 += currentNumber;
+            currentNumber -= stepnumber;
+        }
+        return sum2;
+    },
+
+    if(startnumber>endnumber)
+    {console.log("start number greater than end number by " + startnumber-endnumber)}
+    // make this code segment work in app.js!!!
+};
+
+module.exports = BrownBear1;
+
+
+app1.js
+
+var myLogModule = require('./program1.js');
+
+console.log(myLogModule.forLoopAdder(1000, 100, 48));
+
+console.log(myLogModule.whileLoopAdder(1000, 100, 48));
+
+if (myLogModule.forLoopAdder(1000, 100, 48) == myLogModule.whileLoopAdder(1000, 100, 48)) {
+    console.log("same answer both ways!")
+}
